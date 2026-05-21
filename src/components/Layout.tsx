@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, User, Truck, Gift, Menu, X } from 'lucide-react';
+import { ShoppingCart, User, Gift, Menu, X } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -56,7 +56,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               )}
               <span className="sr-only">Panier</span>
             </Link>
-            <button 
+            <button
               className="md:hidden p-2 hover:bg-stone-100 rounded-full"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >

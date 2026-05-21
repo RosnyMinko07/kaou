@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStore, Product } from '../store/useStore';
-import { ShoppingBag, Filter } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 const PRODUCTS: Product[] = [
   {
@@ -30,7 +30,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: '4',
-    name: 'Gâteau d\'Anniversaire Personnalisé',
+    name: "Gâteau d'Anniversaire Personnalisé",
     category: 'Custom',
     price: 45.00,
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop',
@@ -52,8 +52,8 @@ export const Catalog: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('Tout');
   const { addToCart } = useStore();
 
-  const filteredProducts = selectedCategory === 'Tout' 
-    ? PRODUCTS 
+  const filteredProducts = selectedCategory === 'Tout'
+    ? PRODUCTS
     : PRODUCTS.filter(p => p.category === selectedCategory);
 
   return (
@@ -67,8 +67,8 @@ export const Catalog: React.FC = () => {
             key={cat}
             onClick={() => setSelectedCategory(cat)}
             className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              selectedCategory === cat 
-                ? 'bg-amber-600 text-white shadow-lg scale-105' 
+              selectedCategory === cat
+                ? 'bg-amber-600 text-white shadow-lg scale-105'
                 : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
             }`}
           >
@@ -82,9 +82,9 @@ export const Catalog: React.FC = () => {
         {filteredProducts.map(product => (
           <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
             <div className="relative h-64 overflow-hidden">
-              <img 
-                src={product.image} 
-                alt={product.name} 
+              <img
+                src={product.image}
+                alt={product.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               {product.category === 'Custom' && (
@@ -99,15 +99,15 @@ export const Catalog: React.FC = () => {
                 <span className="text-lg font-serif font-bold text-amber-600">{product.price}€</span>
               </div>
               <p className="text-stone-500 text-sm mb-6 line-clamp-2">{product.description}</p>
-              
+
               <div className="flex gap-3">
-                <Link 
+                <Link
                   to={`/product/${product.id}`}
                   className="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-800 py-3 rounded-xl font-medium text-center transition-colors"
                 >
                   Détails
                 </Link>
-                <button 
+                <button
                   onClick={() => addToCart(product)}
                   className="flex-1 bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-xl font-medium flex items-center justify-center gap-2 transition-colors shadow-md hover:shadow-lg"
                 >

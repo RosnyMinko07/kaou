@@ -51,29 +51,28 @@ export const Tracking: React.FC = () => {
         {/* Progress Bar */}
         <div className="relative mb-12">
           <div className="absolute top-1/2 left-0 w-full h-1 bg-stone-100 -translate-y-1/2 rounded-full" />
-          <div 
+          <div
             className="absolute top-1/2 left-0 h-1 bg-amber-500 -translate-y-1/2 rounded-full transition-all duration-1000 ease-in-out"
             style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }}
           />
-          
+
           <div className="relative flex justify-between">
             {STEPS.map((step, index) => {
               const Icon = step.icon;
               const isActive = index <= currentStep;
-              const isCurrent = index === currentStep;
 
               return (
                 <div key={step.id} className="flex flex-col items-center gap-3">
-                  <div 
+                  <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center border-4 transition-all duration-500 ${
-                      isActive 
-                        ? 'bg-amber-500 border-amber-500 text-white shadow-lg scale-110' 
+                      isActive
+                        ? 'bg-amber-500 border-amber-500 text-white shadow-lg scale-110'
                         : 'bg-white border-stone-200 text-stone-300'
                     }`}
                   >
                     <Icon className="w-6 h-6" />
                   </div>
-                  <span 
+                  <span
                     className={`text-xs font-bold uppercase tracking-wide transition-colors duration-500 ${
                       isActive ? 'text-amber-600' : 'text-stone-300'
                     }`}

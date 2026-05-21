@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, User } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 
 const POSTS = [
   {
@@ -19,7 +19,7 @@ const POSTS = [
   },
   {
     id: 2,
-    title: 'L\'art de la dégustation',
+    title: "L'art de la dégustation",
     excerpt: 'Apprenez à savourer chaque bouchée comme un pro.',
     date: '15 Fév 2026',
     author: 'Kaou',

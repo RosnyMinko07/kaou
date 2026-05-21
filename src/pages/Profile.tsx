@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
-import { Gift, Calendar, User, Copy, Check } from 'lucide-react';
+import { Gift, Calendar, Copy, Check } from 'lucide-react';
 
 export const Profile: React.FC = () => {
   const { birthday, setBirthday } = useStore();
@@ -35,7 +35,7 @@ export const Profile: React.FC = () => {
           </div>
           <h2 className="text-xl font-bold text-stone-800">Mon Anniversaire</h2>
         </div>
-        
+
         <p className="text-stone-600 mb-6">
           Enregistrez votre date d'anniversaire pour recevoir des suggestions personnalisées et une surprise une semaine à l'avance !
         </p>
@@ -48,7 +48,7 @@ export const Profile: React.FC = () => {
             className="flex-1 px-4 py-3 rounded-xl border border-stone-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none"
             required
           />
-          <button 
+          <button
             type="submit"
             className="bg-stone-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-stone-800 transition-colors flex items-center gap-2"
           >
@@ -65,7 +65,7 @@ export const Profile: React.FC = () => {
       {/* Referral Section */}
       <section className="bg-gradient-to-br from-amber-500 to-orange-600 p-8 rounded-3xl shadow-xl text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        
+
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-6">
             <div className="bg-white/20 p-3 rounded-full text-white">
@@ -80,7 +80,7 @@ export const Profile: React.FC = () => {
 
           <div className="bg-white/10 p-4 rounded-xl flex items-center justify-between border border-white/20">
             <code className="font-mono text-xl font-bold tracking-wider">{referralCode}</code>
-            <button 
+            <button
               onClick={copyReferral}
               className="p-2 hover:bg-white/20 rounded-lg transition-colors"
               title="Copier le code"
